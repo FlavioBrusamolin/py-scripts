@@ -1,22 +1,24 @@
 from ex02 import Employee
 
+
 class Administrator(Employee):
 
-    _financial_help = float()
+    __financial_help = float()
 
     def __init__(self, name, address, phone, sector_code, base_salary, tax):
         super().__init__(name, address, phone, sector_code, base_salary, tax)
 
     @property
     def financial_help(self):
-        return self._financial_help
+        return self.__financial_help
 
     @financial_help.setter
     def financial_help(self, financial_help):
-        self._financial_help = financial_help
+        self.__financial_help = financial_help
 
     def calculate_salary(self):
-        return super().calculate_salary() + self._financial_help
+        return super().calculate_salary() + self.__financial_help
+
 
 if __name__ == "__main__":
     admin = Administrator(

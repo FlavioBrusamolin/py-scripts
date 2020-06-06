@@ -1,43 +1,44 @@
 class Person:
 
     def __init__(self, name, address, phone):
-        self._name = name
-        self._address = address
-        self._phone = phone
+        self.__name = name
+        self.__address = address
+        self.__phone = phone
 
     @property
     def name(self):
-        return self._name
+        return self.__name
 
     @name.setter
     def name(self, name):
-        self._name = name
+        self.__name = name
 
     @property
     def address(self):
-        return self._address
+        return self.__address
 
     @address.setter
     def address(self, address):
-        self._address = address
+        self.__address = address
 
     @property
     def phone(self):
-        return self._phone
+        return self.__phone
 
     @phone.setter
     def phone(self, phone):
-        self._phone = phone
+        self.__phone = phone
 
     def introduce_yourself(self):
         return {
-            'name': self._name,
-            'address': self._address,
-            'phone': self._phone
+            'name': self.__name,
+            'address': self.__address,
+            'phone': self.__phone
         }
 
     def exchange_phone(self, other):
-        self._phone, other.phone = other.phone, self._phone
+        self.__phone, other.phone = other.phone, self.__phone
+
 
 if __name__ == "__main__":
     p1 = Person(
